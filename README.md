@@ -4,6 +4,12 @@ A minimal, dependency-free Python harness that lets a local LLM tackle tasks far
 larger than its context window, by treating the context window as **RAM** (loaded
 and flushed deliberately) and keeping the real state on disk.
 
+![The live web UI — a task tree building in real time](ui_shot.png)
+
+*The web visualizer: each node is a subtask coloured by state (planning → running
+→ synthesizing → done), solid edges are parent→child, dashed edges are real
+dependencies, and the live event log streams below.*
+
 One recursive `Node` type is used identically at every level:
 
 ```
